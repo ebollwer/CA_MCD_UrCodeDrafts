@@ -371,7 +371,7 @@ battleship.plot(MatProp,
 # You need to decide if you want to use exactly the same data that
 # went into the MCD analysis (dataForMCD$unitData), or the 
 # data with all the ware types. To chose, commment out one of these two lines:
- wareByUnitT_forCA <- wareByUnitT2 # use all the data
+wareByUnitT_forCA <- wareByUnitT2 # use all the data
 #wareByUnitT_forCA <- dataForMCD$unitData # use ONLY the data used for MCDs
 
 # 12.1 USE THIS SECTION AFTER AN INITIAL CA RUN TO remove types and units from the analysis that are outliers
@@ -388,8 +388,8 @@ colSums(wareByUnitT_forCA[,-1])
 # wareByUnitT_forCA <- wareByUnitT_forCA %>% select( 
 #     - 'Astbury Type', 
 #     - 'White Salt Glaze'
- )
-  
+)
+
 
 #12.2 USE THIS SECTION TO RUN THE INITIAL CA AND THEN USE AGAIN AFTER REMOVING OUTLIERS                   
 #Run the CA
@@ -442,7 +442,7 @@ p <- ggplot(data=inertia , aes(x= 1:length(Inertia), y=Inertia)) +
   theme(plot.title = element_text(hjust = 0.5))+
   geom_line(col= "cornflower blue", size=1) +
   geom_point(shape=21, size=5, colour="black", fill="cornflower blue") +
-#make sure to update title to proper site name
+  #make sure to update title to proper site name
   labs( title="South Pavilion", x="Dimension", y='Proportion of Inertia' ) +
   geom_line(aes(y = bs[,2], x= bs[,1]), color = "black", linetype = "dashed", 
             size=1)
